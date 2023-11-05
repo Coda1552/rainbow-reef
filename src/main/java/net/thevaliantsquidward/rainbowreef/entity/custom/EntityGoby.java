@@ -174,7 +174,7 @@ public class EntityGoby extends AbstractFish implements GeoEntity, Bucketable {
 
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 6D)
+                .add(Attributes.MAX_HEALTH, 4D)
                 .add(Attributes.MOVEMENT_SPEED, 0.5D)
                 .build();
     }

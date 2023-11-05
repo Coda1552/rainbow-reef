@@ -13,6 +13,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.thevaliantsquidward.rainbowreef.entity.ModEntities;
+import net.thevaliantsquidward.rainbowreef.entity.client.BoxfishRenderer;
 import net.thevaliantsquidward.rainbowreef.entity.client.GobyRenderer;
 import net.thevaliantsquidward.rainbowreef.entity.client.TangRenderer;
 import net.thevaliantsquidward.rainbowreef.item.ModItems;
@@ -66,6 +67,8 @@ public class RainbowReef
                     (ModEntities.TANG.get(), TangRenderer:: new);
             EntityRenderers.register
                     (ModEntities.GOBY.get(), GobyRenderer:: new);
+            EntityRenderers.register
+                    (ModEntities.BOXFISH.get(), BoxfishRenderer:: new);
 
         }
     }

@@ -8,6 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.thevaliantsquidward.rainbowreef.RainbowReef;
+import net.thevaliantsquidward.rainbowreef.entity.custom.EntityBoxfish;
 import net.thevaliantsquidward.rainbowreef.entity.custom.EntityGoby;
 import net.thevaliantsquidward.rainbowreef.entity.custom.EntityTang;
 
@@ -26,6 +27,14 @@ public class ModEntities {
                     () -> EntityType.Builder.of(EntityTang::new, MobCategory.CREATURE)
                             .sized(0.5f, 0.5f)
                             .build(new ResourceLocation(RainbowReef.MOD_ID, "tang").toString()));
+
+
+    public static final RegistryObject<EntityType<EntityBoxfish>> BOXFISH =
+            ENTITY_TYPES.register("boxfish",
+                    () -> EntityType.Builder.of(EntityBoxfish::new, MobCategory.CREATURE)
+                            .sized(0.5f, 0.5f)
+                            .build(new ResourceLocation(RainbowReef.MOD_ID, "boxfish").toString()));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
