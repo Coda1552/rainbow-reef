@@ -18,11 +18,11 @@ public class BoxfishRenderer extends GeoEntityRenderer<EntityBoxfish> {
         super(renderManagerIn, new BoxfishModel());
     }
 
-    protected void scale(EntityGoby entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
+    protected void scale(EntityBoxfish entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
     }
 
 
-    public ResourceLocation getTextureLocation(EntityGoby entity) {
+    public ResourceLocation getTextureLocation(EntityBoxfish entity) {
         return switch (entity.getVariant()) {
             case 1 -> TEXTURE_PURPLE;
             case 2 -> TEXTURE_STRIPE;
