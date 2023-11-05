@@ -14,7 +14,10 @@ public class GobyRenderer extends GeoEntityRenderer<EntityGoby> {
     private static final ResourceLocation TEXTURE_CANDYCANE = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/candycanegoby.png");
     private static final ResourceLocation TEXTURE_MANDARIN = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/mandaringoby.png");
     private static final ResourceLocation TEXTURE_YELLOWWATCH = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/yellowwatchmangoby.png");
-   
+
+    private static final ResourceLocation TEXTURE_CATALINA = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/catalinagoby.png");
+
+
     public GobyRenderer(EntityRendererProvider.Context renderManagerIn) {
         super(renderManagerIn, new GobyModel());
     }
@@ -29,6 +32,7 @@ public class GobyRenderer extends GeoEntityRenderer<EntityGoby> {
             case 2 -> TEXTURE_CANDYCANE;
             case 3 -> TEXTURE_MANDARIN;
             case 4 -> TEXTURE_YELLOWWATCH;
+            case 5 -> TEXTURE_CATALINA;
             default -> TEXTURE_FIRE;
         };
     }
