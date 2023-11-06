@@ -20,7 +20,6 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
-import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.AbstractSchoolingFish;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
@@ -38,7 +37,7 @@ import software.bernie.geckolib.core.object.PlayState;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class EntityTang extends AbstractSchoolingFish implements GeoEntity, Bucketable {
+public class EntityClownfish extends AbstractSchoolingFish implements GeoEntity, Bucketable {
 
 
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
@@ -46,19 +45,20 @@ public class EntityTang extends AbstractSchoolingFish implements GeoEntity, Buck
     private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(EntityTang.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(EntityTang.class, EntityDataSerializers.INT);
 
-    public EntityTang(EntityType<? extends AbstractSchoolingFish> pEntityType, Level pLevel) {
+    public EntityClownfish(EntityType<? extends AbstractSchoolingFish> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
     public static String getVariantName(int variant) {
         return switch (variant) {
-            case 1 -> "powderblue";
-            case 2 -> "yellow";
-            case 3 -> "unicorn";
-            case 4 -> "convict";
-            case 5 -> "clown";
-            case 6 -> "achilles";
-            default -> "bluehippo";
+            case 1 -> "clownfish_1";
+            case 2 -> "clownfish_2";
+            case 3 -> "clownfish_4";
+            case 4 -> "clownfish_5";
+            case 5 -> "clownfish_6";
+            case 6 -> "clownfish_7";
+            case 7 -> "clownfish_8";
+            default -> "clownfish_3";
         };
     }
 
@@ -142,15 +142,17 @@ public class EntityTang extends AbstractSchoolingFish implements GeoEntity, Buck
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         float variantChange = this.getRandom().nextFloat();
-        if(variantChange <= 0.14F){
+              if(variantChange <= 0.12F){
+            this.setVariant(7);
+        }else if(variantChange <= 0.24F){
             this.setVariant(6);
-        }else if(variantChange <= 0.28F){
+        }else if(variantChange <= 0.36F){
             this.setVariant(5);
-        }else if(variantChange <= 0.42F){
+        }else if(variantChange <= 0.48F){
             this.setVariant(4);
-        }else if(variantChange <= 0.56F){
+        }else if(variantChange <= 0.60F){
             this.setVariant(3);
-        }else if(variantChange <= 0.70F){
+        }else if(variantChange <= 0.72F){
             this.setVariant(2);
         }else if(variantChange <= 0.84F){
             this.setVariant(1);
@@ -176,7 +178,7 @@ public class EntityTang extends AbstractSchoolingFish implements GeoEntity, Buck
 
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 6D)
+                .add(Attributes.MAX_HEALTH, 4D)
                 .add(Attributes.MOVEMENT_SPEED, 0.7D)
                 .build();
     }
@@ -214,7 +216,7 @@ public class EntityTang extends AbstractSchoolingFish implements GeoEntity, Buck
     }
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
-        geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.tangfish.move", Animation.LoopType.LOOP));
+        geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.clownfish.move", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
 

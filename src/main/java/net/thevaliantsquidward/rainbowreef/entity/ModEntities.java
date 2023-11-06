@@ -8,9 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.thevaliantsquidward.rainbowreef.RainbowReef;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityBoxfish;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityGoby;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityTang;
+import net.thevaliantsquidward.rainbowreef.entity.custom.*;
 
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
@@ -34,6 +32,18 @@ public class ModEntities {
                     () -> EntityType.Builder.of(EntityBoxfish::new, MobCategory.CREATURE)
                             .sized(0.5f, 0.5f)
                             .build(new ResourceLocation(RainbowReef.MOD_ID, "boxfish").toString()));
+
+    public static final RegistryObject<EntityType<EntitySmallShark>> SMALL_SHARK =
+            ENTITY_TYPES.register("small_shark",
+                    () -> EntityType.Builder.of(EntitySmallShark::new, MobCategory.CREATURE)
+                            .sized(0.7f, 0.7f)
+                            .build(new ResourceLocation(RainbowReef.MOD_ID, "small_shark").toString()));
+
+    public static final RegistryObject<EntityType<EntityClownfish>> CLOWNFISH =
+            ENTITY_TYPES.register("clownfish",
+                    () -> EntityType.Builder.of(EntityClownfish::new, MobCategory.CREATURE)
+                            .sized(0.5f, 0.5f)
+                            .build(new ResourceLocation(RainbowReef.MOD_ID, "clownfish").toString()));
 
 
     public static void register(IEventBus eventBus) {

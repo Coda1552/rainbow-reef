@@ -2,8 +2,12 @@
   "item.rainbowreef.goby_spawn_egg" : "Goby Spawn Egg",
   "item.rainbowreef.tang_spawn_egg" : "Tang Spawn Egg",
   "item.rainbowreef.boxfish_spawn_egg" : "Boxfish Spawn Egg",
+  "item.rainbowreef.small_shark_spawn_egg" : "Small Shark Spawn Egg",
+  "item.rainbowreef.clownfish_spawn_egg" : "Clownfish Spawn Egg",
 
   "entity.rainbowreef.goby" : "Goby",
   "entity.rainbowreef.tang" : "Tang",
-  "entity.rainbowreef.boxfish" : "Boxfish"
+  "entity.rainbowreef.boxfish" : "Boxfish",
+  "entity.rainbowreef.small_shark" : "Small Shark",
+  "entity.rainbowreef.clownfish" : "Clownfish"
 }
