@@ -6,7 +6,7 @@
   ],
   "spawners" : {
    "type" : "rainbowreef:clownfish",
-    "weight" : 35,
+    "weight" : 40,
     "minCount" : 2,
     "maxCount" : 5
   }

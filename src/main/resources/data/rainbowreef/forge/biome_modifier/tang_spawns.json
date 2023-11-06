@@ -6,7 +6,7 @@
   ],
   "spawners" : {
    "type" : "rainbowreef:tang",
-    "weight" : 40,
+    "weight" : 45,
     "minCount" : 3,
     "maxCount" : 6
   }
