@@ -16,6 +16,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.thevaliantsquidward.rainbowreef.entity.ModEntities;
 import net.thevaliantsquidward.rainbowreef.entity.client.*;
+import net.thevaliantsquidward.rainbowreef.item.ModCreativeModeTabs;
 import net.thevaliantsquidward.rainbowreef.item.ModItems;
 import org.slf4j.Logger;
 
@@ -32,6 +33,8 @@ public class RainbowReef
 
         modEventBus.addListener(this::commonSetup);
 
+        ModCreativeModeTabs.register(modEventBus);
+
         ModEntities.register(modEventBus);
 
         ModItems.register(modEventBus);
@@ -47,13 +50,6 @@ public class RainbowReef
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-            event.accept(ModItems.CLOWNFISH_SPAWN_EGG);
-            event.accept(ModItems.TANG_SPAWN_EGG);
-            event.accept(ModItems.SMALL_SHARK_SPAWN_EGG);
-            event.accept(ModItems.GOBY_SPAWN_EGG);
-            event.accept(ModItems.BOXFISH_SPAWN_EGG);
-        }
     }
 
     @SubscribeEvent
