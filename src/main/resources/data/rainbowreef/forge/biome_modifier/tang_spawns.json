@@ -1,0 +1,13 @@
+{
+  "type" :"forge:add_spawns",
+  "biomes" : [
+    "minecraft:warm_ocean",
+    "minecraft:lukewarm_ocean"
+  ],
+  "spawners" : {
+   "type" : "rainbowreef:tang",
+    "weight" : 40,
+    "minCount" : 3,
+    "maxCount" : 6
+  }
+}
