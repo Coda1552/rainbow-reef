@@ -27,6 +27,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.thevaliantsquidward.rainbowreef.item.ModItems;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -69,15 +70,15 @@ public class EntityClownfish extends AbstractSchoolingFish implements GeoEntity,
         this.entityData.define(FROM_BUCKET, false);
     }
 
-//    @Override
-//    @Nonnull
-//    public ItemStack getBucketItemStack() {
-//        ItemStack stack = new ItemStack(ModItems.TANG_BUCKET.get());
-//        if (this.hasCustomName()) {
-//            stack.setHoverName(this.getCustomName());
-//        }
-//        return stack;
-//    }
+    @Override
+    @Nonnull
+    public ItemStack getBucketItemStack() {
+        ItemStack stack = new ItemStack(ModItems.CLOWNFISH_BUCKET.get());
+        if (this.hasCustomName()) {
+            stack.setHoverName(this.getCustomName());
+        }
+        return stack;
+    }
 
     @Override
     public void saveToBucketTag(@Nonnull ItemStack bucket) {
@@ -225,8 +226,4 @@ public class EntityClownfish extends AbstractSchoolingFish implements GeoEntity,
         return cache;
     }
 
-    @Override
-    public ItemStack getBucketItemStack() {
-        return null;
-    }
 }

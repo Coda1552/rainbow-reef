@@ -20,7 +20,6 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
-import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.AbstractSchoolingFish;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
@@ -28,6 +27,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.thevaliantsquidward.rainbowreef.item.ModItems;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -69,15 +69,15 @@ public class EntityTang extends AbstractSchoolingFish implements GeoEntity, Buck
         this.entityData.define(FROM_BUCKET, false);
     }
 
-//    @Override
-//    @Nonnull
-//    public ItemStack getBucketItemStack() {
-//        ItemStack stack = new ItemStack(ModItems.TANG_BUCKET.get());
-//        if (this.hasCustomName()) {
-//            stack.setHoverName(this.getCustomName());
-//        }
-//        return stack;
-//    }
+    @Override
+    @Nonnull
+    public ItemStack getBucketItemStack() {
+        ItemStack stack = new ItemStack(ModItems.TANG_BUCKET.get());
+        if (this.hasCustomName()) {
+            stack.setHoverName(this.getCustomName());
+        }
+        return stack;
+    }
 
     @Override
     public void saveToBucketTag(@Nonnull ItemStack bucket) {
@@ -223,8 +223,5 @@ public class EntityTang extends AbstractSchoolingFish implements GeoEntity, Buck
         return cache;
     }
 
-    @Override
-    public ItemStack getBucketItemStack() {
-        return null;
-    }
+
 }

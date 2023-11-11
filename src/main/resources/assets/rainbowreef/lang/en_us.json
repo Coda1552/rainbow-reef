@@ -1,11 +1,34 @@
 {
   "creativetab.rainbow_reef_tab" : "Rainbow Reef",
 
+  "item.rainbowreef.goby_bucket" : "Bucket of Goby",
+  "item.rainbowreef.tang_bucket" : "Bucket of Tang",
+  "item.rainbowreef.clownfish_bucket" : "Bucket of Clownfish",
+
+  "item.rainbowreef.raw_goby" : "Raw Goby",
+  "item.rainbowreef.raw_tang" : "Raw Tang",
+  "item.rainbowreef.raw_boxfish" : "Raw Boxfish",
+
   "item.rainbowreef.goby_spawn_egg" : "Goby Spawn Egg",
   "item.rainbowreef.tang_spawn_egg" : "Tang Spawn Egg",
   "item.rainbowreef.boxfish_spawn_egg" : "Boxfish Spawn Egg",
   "item.rainbowreef.small_shark_spawn_egg" : "Small Shark Spawn Egg",
   "item.rainbowreef.clownfish_spawn_egg" : "Clownfish Spawn Egg",
+
+  "entity.rainbowreef.goby.variant_mandarin": "Mandarin",
+  "entity.rainbowreef.goby.variant_purplefire": "Purple Fire",
+  "entity.rainbowreef.goby.variant_fire": "Fire",
+  "entity.rainbowreef.goby.variant_candycane": "Candycane",
+  "entity.rainbowreef.goby.variant_yellowwatchman": "Yellow Watchman",
+  "entity.rainbowreef.goby.variant_catalina": "Catalina",
+
+  "entity.rainbowreef.tang.variant_bluehippo": "Blue",
+  "entity.rainbowreef.tang.variant_powderblue": "Powderblue",
+  "entity.rainbowreef.tang.variant_clown": "Clown",
+  "entity.rainbowreef.tang.variant_convict": "Convict",
+  "entity.rainbowreef.tang.variant_yellow": "Yellow",
+  "entity.rainbowreef.tang.variant_unicorn": "Unicorn",
+  "entity.rainbowreef.tang.variant_achilles": "Achilles",
 
   "entity.rainbowreef.goby" : "Goby",
   "entity.rainbowreef.tang" : "Tang",
