@@ -4,16 +4,22 @@
   "item.rainbowreef.goby_bucket" : "Bucket of Goby",
   "item.rainbowreef.tang_bucket" : "Bucket of Tang",
   "item.rainbowreef.clownfish_bucket" : "Bucket of Clownfish",
+  "item.rainbowreef.butterflyfish_bucket" : "Bucket of Butterflyfish",
+  "item.rainbowreef.smallshark_bucket" : "Bucket of Small Shark",
+  "item.rainbowreef.boxfish_bucket" : "Bucket of Boxfish",
 
   "item.rainbowreef.raw_goby" : "Raw Goby",
   "item.rainbowreef.raw_tang" : "Raw Tang",
   "item.rainbowreef.raw_boxfish" : "Raw Boxfish",
+  "item.rainbowreef.raw_clownfish" : "Raw Clownfish",
+  "item.rainbowreef.raw_butterflyfish" : "Raw Butterflyfish",
 
   "item.rainbowreef.goby_spawn_egg" : "Goby Spawn Egg",
   "item.rainbowreef.tang_spawn_egg" : "Tang Spawn Egg",
   "item.rainbowreef.boxfish_spawn_egg" : "Boxfish Spawn Egg",
   "item.rainbowreef.small_shark_spawn_egg" : "Small Shark Spawn Egg",
   "item.rainbowreef.clownfish_spawn_egg" : "Clownfish Spawn Egg",
+  "item.rainbowreef.butterflyfish_spawn_egg" : "Butterflyfish Spawn Egg",
 
   "entity.rainbowreef.goby.variant_mandarin": "Mandarin",
   "entity.rainbowreef.goby.variant_purplefire": "Purple Fire",
@@ -30,9 +36,35 @@
   "entity.rainbowreef.tang.variant_unicorn": "Unicorn",
   "entity.rainbowreef.tang.variant_achilles": "Achilles",
 
+  "entity.rainbowreef.clownfish.variant_clownfish_1": "Mustard",
+  "entity.rainbowreef.clownfish.variant_clownfish_2": "Yellow",
+  "entity.rainbowreef.clownfish.variant_clownfish_3": "Cherry",
+  "entity.rainbowreef.clownfish.variant_clownfish_4": "Black",
+  "entity.rainbowreef.clownfish.variant_clownfish_5": "Tomato",
+  "entity.rainbowreef.clownfish.variant_clownfish_6": "Pink",
+  "entity.rainbowreef.clownfish.variant_clownfish_7": "Splattered",
+  "entity.rainbowreef.clownfish.variant_clownfish_8": "Blizzard",
+
+  "entity.rainbowreef.small_shark.variant_epaulette": "Epaulette",
+  "entity.rainbowreef.small_shark.variant_zebra": "Zebra",
+
+  "entity.rainbowreef.boxfish.variant_purple": "White Spotted",
+  "entity.rainbowreef.boxfish.variant_stripe": "White Barred",
+  "entity.rainbowreef.boxfish.variant_white": "Horn Nosed",
+  "entity.rainbowreef.boxfish.variant_gold": "Yellow",
+
+  "entity.rainbowreef.butterflyfish.variant_easterisland": "Easter Island",
+  "entity.rainbowreef.butterflyfish.variant_threadfin": "Threadfin",
+  "entity.rainbowreef.butterflyfish.variant_banner": "Banner",
+  "entity.rainbowreef.butterflyfish.variant_bluecheek": "Bluecheek",
+  "entity.rainbowreef.butterflyfish.variant_longnose": "Longnose",
+  "entity.rainbowreef.butterflyfish.variant_spotfin": "Spotfin",
+  "entity.rainbowreef.butterflyfish.variant_copperbanded": "Copperband",
+
   "entity.rainbowreef.goby" : "Goby",
   "entity.rainbowreef.tang" : "Tang",
   "entity.rainbowreef.boxfish" : "Boxfish",
   "entity.rainbowreef.small_shark" : "Small Shark",
-  "entity.rainbowreef.clownfish" : "Clownfish"
+  "entity.rainbowreef.clownfish" : "Clownfish",
+  "entity.rainbowreef.butterflyfish" : "Butterflyfish"
 }

@@ -34,6 +34,9 @@ public class ModItems {
     public static final RegistryObject<Item> CLOWNFISH_SPAWN_EGG = ITEMS.register("clownfish_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.CLOWNFISH, 0xe55500, 0xe69d7d, new Item.Properties()));
 
+    public static final RegistryObject<Item> BUTTERFISH_SPAWN_EGG = ITEMS.register("butterflyfish_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.BUTTERFISH, 0xdb8f1a, 0xfffdf6, new Item.Properties()));
+
     public static final RegistryObject<Item> GOBY_BUCKET = ITEMS.register("goby_bucket", () -> new ItemModFishBucket(ModEntities.GOBY, Fluids.WATER, new Item.Properties()));
 
     public static final RegistryObject<Item> TANG_BUCKET = ITEMS.register("tang_bucket", () -> new ItemModFishBucket(ModEntities.TANG, Fluids.WATER, new Item.Properties()));
@@ -42,12 +45,22 @@ public class ModItems {
 
     public static final RegistryObject<Item> BOXFISH_BUCKET = ITEMS.register("boxfish_bucket", () -> new ItemModFishBucket(ModEntities.BOXFISH, Fluids.WATER, new Item.Properties()));
 
+    public static final RegistryObject<Item> BUTTERFISH_BUCKET = ITEMS.register("butterflyfish_bucket", () -> new ItemModFishBucket(ModEntities.BUTTERFISH, Fluids.WATER, new Item.Properties()));
+
+    public static final RegistryObject<Item> SHARK_BUCKET = ITEMS.register("smallshark_bucket", () -> new ItemModFishBucket(ModEntities.SMALL_SHARK, Fluids.WATER, new Item.Properties()));
+
+
 
     public static final RegistryObject<Item> RAW_GOBY = ITEMS.register("raw_goby", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).meat().build())));
 
     public static final RegistryObject<Item> RAW_TANG = ITEMS.register("raw_tang", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).meat().build())));
 
     public static final RegistryObject<Item> RAW_BOXFISH = ITEMS.register("raw_boxfish", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).meat().effect(new MobEffectInstance(MobEffects.WITHER, 140, 2), 1F).build())));
+
+    public static final RegistryObject<Item> RAW_CLOWNFISH = ITEMS.register("raw_clownfish", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).meat().build())));
+
+    public static final RegistryObject<Item> RAW_BUTTERFISH = ITEMS.register("raw_butterflyfish", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.4F).meat().build())));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

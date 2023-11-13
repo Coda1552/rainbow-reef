@@ -45,6 +45,13 @@ public class ModEntities {
                             .sized(0.5f, 0.5f)
                             .build(new ResourceLocation(RainbowReef.MOD_ID, "clownfish").toString()));
 
+    public static final RegistryObject<EntityType<EntityButterfish>> BUTTERFISH =
+            ENTITY_TYPES.register("butterflyfish",
+                    () -> EntityType.Builder.of(EntityButterfish::new, MobCategory.CREATURE)
+                            .sized(0.5f, 0.5f)
+                            .build(new ResourceLocation(RainbowReef.MOD_ID, "butterflyfish").toString()));
+
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

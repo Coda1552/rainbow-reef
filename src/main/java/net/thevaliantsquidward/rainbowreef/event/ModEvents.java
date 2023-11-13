@@ -21,20 +21,7 @@ public class ModEvents {
         event.put(ModEntities.BOXFISH.get(), EntityBoxfish.setAttributes());
         event.put(ModEntities.SMALL_SHARK.get(), EntitySmallShark.setAttributes());
         event.put(ModEntities.CLOWNFISH.get(), EntityClownfish.setAttributes());
+        event.put(ModEntities.BUTTERFISH.get(), EntityClownfish.setAttributes());
     }
-
-//    public static void entitySpawnRestriction(SpawnPlacementRegisterEvent event) {
-//        event.register(ModEntities.SMALL_SHARK.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-//        AbstractFish::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
-//        event.register(ModEntities.TANG.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-//                AbstractFish::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
-//        event.register(ModEntities.GOBY.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-//                AbstractFish::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
-//        event.register(ModEntities.CLOWNFISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-//                AbstractFish::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
-//        event.register(ModEntities.BOXFISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-//                AbstractFish::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
-//
-//    }
 
 }

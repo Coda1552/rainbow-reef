@@ -38,17 +38,23 @@ import software.bernie.geckolib.core.object.PlayState;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class EntitySmallShark extends AbstractFish implements GeoEntity, Bucketable {
+public class EntityButterfish extends AbstractFish implements GeoEntity, Bucketable {
+
 
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
-    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(EntityBoxfish.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(EntityBoxfish.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(EntityButterfish.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(EntityButterfish.class, EntityDataSerializers.INT);
 
     public static String getVariantName(int variant) {
         return switch (variant) {
-            case 1 -> "zebra";
-            default -> "epaulette";
+            case 1 -> "easterisland";
+            case 2 -> "threadfin";
+            case 3 -> "banner";
+            case 4 -> "bluecheek";
+            case 5 -> "longnose";
+            case 6 -> "spotfin";
+            default -> "copperbanded";
         };
     }
 
@@ -62,7 +68,7 @@ public class EntitySmallShark extends AbstractFish implements GeoEntity, Bucketa
     @Override
     @Nonnull
     public ItemStack getBucketItemStack() {
-        ItemStack stack = new ItemStack(ModItems.SHARK_BUCKET.get());
+        ItemStack stack = new ItemStack(ModItems.BUTTERFISH_BUCKET.get());
         if (this.hasCustomName()) {
             stack.setHoverName(this.getCustomName());
         }
@@ -132,7 +138,18 @@ public class EntitySmallShark extends AbstractFish implements GeoEntity, Bucketa
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         float variantChange = this.getRandom().nextFloat();
-        if(variantChange <= 0.50F){
+        if(variantChange <= 0.14F){
+            this.setVariant(6);
+        }else
+        if(variantChange <= 0.28F){
+            this.setVariant(5);
+        }else if(variantChange <= 0.42F){
+            this.setVariant(4);
+        }else if(variantChange <= 0.56F){
+            this.setVariant(3);
+        }else if(variantChange <= 0.80F){
+            this.setVariant(2);
+        }else if(variantChange <= 0.94F){
             this.setVariant(1);
         }else{
             this.setVariant(0);
@@ -140,20 +157,29 @@ public class EntitySmallShark extends AbstractFish implements GeoEntity, Bucketa
         return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
     }
 
+    public void aiStep() {
+        if (!this.isInWater() && this.verticalCollision) {
+            this.setDeltaMovement(this.getDeltaMovement().add(((this.random.nextFloat() * 2.0F - 1.0F) * 0.05F), 0.4F, (this.random.nextFloat() * 2.0F - 1.0F) * 0.05F));
+            this.hasImpulse = true;
+            this.playSound(this.getFlopSound(), this.getSoundVolume(), this.getVoicePitch());
+        }
+
+        super.aiStep();
+    }
 
     public MobType getMobType() {
         return MobType.WATER;
     }
 
-    public EntitySmallShark(EntityType<? extends AbstractFish> pEntityType, Level pLevel) {
+    public EntityButterfish(EntityType<? extends AbstractFish> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
 
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 7D)
-                .add(Attributes.MOVEMENT_SPEED, 0.2D)
+                .add(Attributes.MAX_HEALTH, 4D)
+                .add(Attributes.MOVEMENT_SPEED, 0.5D)
                 .build();
     }
 
@@ -190,7 +216,7 @@ public class EntitySmallShark extends AbstractFish implements GeoEntity, Bucketa
     }
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
-        geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.small_shark.move", Animation.LoopType.LOOP));
+        geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.butterflyfish.move", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
 

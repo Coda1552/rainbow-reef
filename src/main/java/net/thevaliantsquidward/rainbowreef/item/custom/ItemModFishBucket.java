@@ -15,10 +15,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.thevaliantsquidward.rainbowreef.entity.ModEntities;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityBoxfish;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityClownfish;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityGoby;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityTang;
+import net.thevaliantsquidward.rainbowreef.entity.custom.*;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -62,6 +59,23 @@ public class ItemModFishBucket extends MobBucketItem {
             if (compoundnbt != null && compoundnbt.contains("BucketVariantTag", 3)) {
                 int i = compoundnbt.getInt("BucketVariantTag");
                 String s = "entity.rainbowreef.boxfish.variant_" + EntityBoxfish.getVariantName(i);
+                tooltip.add((Component.translatable(s)).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+            }
+        }
+        if (fishType == ModEntities.SMALL_SHARK.get()) {
+            CompoundTag compoundnbt = stack.getTag();
+            if (compoundnbt != null && compoundnbt.contains("BucketVariantTag", 3)) {
+                int i = compoundnbt.getInt("BucketVariantTag");
+                String s = "entity.rainbowreef.small_shark.variant_" + EntitySmallShark.getVariantName(i);
+                tooltip.add((Component.translatable(s)).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+            }
+        }
+
+        if (fishType == ModEntities.BUTTERFISH.get()) {
+            CompoundTag compoundnbt = stack.getTag();
+            if (compoundnbt != null && compoundnbt.contains("BucketVariantTag", 3)) {
+                int i = compoundnbt.getInt("BucketVariantTag");
+                String s = "entity.rainbowreef.butterflyfish.variant_" + EntityButterfish.getVariantName(i);
                 tooltip.add((Component.translatable(s)).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
             }
         }
