@@ -153,7 +153,7 @@ public class EntitySmallShark extends AbstractFish implements GeoEntity, Bucketa
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 7D)
-                .add(Attributes.MOVEMENT_SPEED, 0.2D)
+                .add(Attributes.MOVEMENT_SPEED, 0.4D)
                 .build();
     }
 

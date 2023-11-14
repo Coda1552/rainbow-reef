@@ -6,7 +6,7 @@
   ],
   "spawners" : {
    "type" : "rainbowreef:boxfish",
-    "weight" : 32,
+    "weight" : 30,
     "minCount" : 1,
     "maxCount" : 2
   }

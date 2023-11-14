@@ -6,7 +6,7 @@
   ],
   "spawners" : {
    "type" : "rainbowreef:small_shark",
-    "weight" : 25,
+    "weight" : 20,
     "minCount" : 1,
     "maxCount" : 1
   }
