@@ -66,5 +66,24 @@
   "entity.rainbowreef.boxfish" : "Boxfish",
   "entity.rainbowreef.small_shark" : "Small Shark",
   "entity.rainbowreef.clownfish" : "Clownfish",
-  "entity.rainbowreef.butterflyfish" : "Butterflyfish"
+  "entity.rainbowreef.butterflyfish" : "Butterflyfish",
+
+
+  "advancements.husbandry.collect_goby.title" : "Goby awesome? I sure hope you do!",
+  "advancements.husbandry.collect_goby.description" : "Collect all Goby Variants",
+
+  "advancements.husbandry.collect_butter.title" : "Butterfish? Where?",
+  "advancements.husbandry.collect_butter.description" : "Collect all Butterflyfish Variants",
+
+  "advancements.husbandry.collect_clownfish.title" : "You Found Nemo",
+  "advancements.husbandry.collect_clownfish.description" : "Collect all Clownfish Variants",
+
+  "advancements.husbandry.collect_tang.title" : "A Whole Pallette of Fish",
+  "advancements.husbandry.collect_tang.description" : "Collect all Tang Variants",
+
+  "advancements.husbandry.collect_shark.title" : "Friends, Not Food",
+  "advancements.husbandry.collect_shark.description" : "Collect all Small Shark Variants",
+
+  "advancements.husbandry.collect_boxfish.title" : "A Neat Little Package",
+  "advancements.husbandry.collect_boxfish.description" : "Collect all Boxfish Variants"
 }
