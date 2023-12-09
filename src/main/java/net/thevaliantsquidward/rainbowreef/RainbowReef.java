@@ -76,6 +76,10 @@ public class RainbowReef
                     (ModEntities.CLOWNFISH.get(), ClownfishRenderer:: new);
             EntityRenderers.register
                     (ModEntities.BUTTERFISH.get(), ButterfishRenderer:: new);
+            EntityRenderers.register
+                    (ModEntities.SEAHORSE.get(), SeahorseRenderer:: new);
+            EntityRenderers.register
+                    (ModEntities.DWARFANGEL.get(), DwarfAngelfishRenderer:: new);
         }
     }
 }

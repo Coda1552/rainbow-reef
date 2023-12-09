@@ -4,10 +4,10 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.thevaliantsquidward.rainbowreef.RainbowReef;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityClownfish;
+import net.thevaliantsquidward.rainbowreef.entity.custom.ClownfishEntity;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class ClownfishRenderer extends GeoEntityRenderer<EntityClownfish> {
+public class ClownfishRenderer extends GeoEntityRenderer<ClownfishEntity> {
     private static final ResourceLocation CLOWNFISH_3 = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/clownfish_3.png");
     private static final ResourceLocation CLOWNFISH_0 = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/clownfish_0.png");
     private static final ResourceLocation CLOWNFISH_1 = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/clownfish_1.png");
@@ -21,11 +21,11 @@ public class ClownfishRenderer extends GeoEntityRenderer<EntityClownfish> {
         super(renderManagerIn, new ClownfishModel());
     }
 
-    protected void scale(EntityClownfish entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
+    protected void scale(ClownfishEntity entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
     }
 
 
-    public ResourceLocation getTextureLocation(EntityClownfish entity) {
+    public ResourceLocation getTextureLocation(ClownfishEntity entity) {
         return switch (entity.getVariant()) {
             case 1 -> CLOWNFISH_0;
             case 2 -> CLOWNFISH_1;

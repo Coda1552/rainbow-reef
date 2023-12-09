@@ -2,13 +2,12 @@ package net.thevaliantsquidward.rainbowreef.entity.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.thevaliantsquidward.rainbowreef.RainbowReef;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityGoby;
+import net.thevaliantsquidward.rainbowreef.entity.custom.GobyEntity;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class GobyRenderer extends GeoEntityRenderer<EntityGoby> {
+public class GobyRenderer extends GeoEntityRenderer<GobyEntity> {
     private static final ResourceLocation TEXTURE_FIRE = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/firegoby.png");
     private static final ResourceLocation TEXTURE_PURPLE = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/purplefiregoby.png");
     private static final ResourceLocation TEXTURE_CANDYCANE = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/candycanegoby.png");
@@ -22,11 +21,11 @@ public class GobyRenderer extends GeoEntityRenderer<EntityGoby> {
         super(renderManagerIn, new GobyModel());
     }
 
-    protected void scale(EntityGoby entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
+    protected void scale(GobyEntity entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
     }
 
 
-    public ResourceLocation getTextureLocation(EntityGoby entity) {
+    public ResourceLocation getTextureLocation(GobyEntity entity) {
         return switch (entity.getVariant()) {
             case 1 -> TEXTURE_PURPLE;
             case 2 -> TEXTURE_CANDYCANE;

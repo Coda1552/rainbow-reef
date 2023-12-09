@@ -4,11 +4,10 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.thevaliantsquidward.rainbowreef.RainbowReef;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityBoxfish;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityGoby;
+import net.thevaliantsquidward.rainbowreef.entity.custom.BoxfishEntity;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class BoxfishRenderer extends GeoEntityRenderer<EntityBoxfish> {
+public class BoxfishRenderer extends GeoEntityRenderer<BoxfishEntity> {
     private static final ResourceLocation TEXTURE_GOLD = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/yellowboxfish.png");
     private static final ResourceLocation TEXTURE_PURPLE = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/whitespottedboxfish.png");
     private static final ResourceLocation TEXTURE_STRIPE = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/whitebarredboxfish.png");
@@ -18,11 +17,11 @@ public class BoxfishRenderer extends GeoEntityRenderer<EntityBoxfish> {
         super(renderManagerIn, new BoxfishModel());
     }
 
-    protected void scale(EntityBoxfish entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
+    protected void scale(BoxfishEntity entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
     }
 
 
-    public ResourceLocation getTextureLocation(EntityBoxfish entity) {
+    public ResourceLocation getTextureLocation(BoxfishEntity entity) {
         return switch (entity.getVariant()) {
             case 1 -> TEXTURE_PURPLE;
             case 2 -> TEXTURE_STRIPE;

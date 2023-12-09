@@ -39,13 +39,13 @@ import software.bernie.geckolib.core.object.PlayState;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class EntityGoby extends AbstractFish implements GeoEntity, Bucketable {
+public class GobyEntity extends AbstractFish implements GeoEntity, Bucketable {
 
 
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
-    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(EntityGoby.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(EntityGoby.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(GobyEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(GobyEntity.class, EntityDataSerializers.INT);
 
     public static String getVariantName(int variant) {
         return switch (variant) {
@@ -158,7 +158,7 @@ public class EntityGoby extends AbstractFish implements GeoEntity, Bucketable {
         return MobType.WATER;
     }
 
-    public EntityGoby(EntityType<? extends AbstractFish> pEntityType, Level pLevel) {
+    public GobyEntity(EntityType<? extends AbstractFish> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 

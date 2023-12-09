@@ -23,29 +23,42 @@ public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
                         //boxfish
                         //butterfish
                         //clownfish
+                        //dwarf angelfish
                         //goby
+                        //seahorse
                         //small shork
                         //tang
 
                         pOutput.accept(ModItems.RAW_BOXFISH.get());
                         pOutput.accept(ModItems.RAW_BUTTERFISH.get());
                         pOutput.accept(ModItems.RAW_CLOWNFISH.get());
+                        pOutput.accept(ModItems.RAW_DWARF_ANGELFISH.get());
                         pOutput.accept(ModItems.RAW_GOBY.get());
                         pOutput.accept(ModItems.RAW_TANG.get());
+                        pOutput.accept(ModItems.RAW_SEAHORSE.get());
 
                         pOutput.accept(ModItems.BOXFISH_BUCKET.get());
                         pOutput.accept(ModItems.BUTTERFISH_BUCKET.get());
                         pOutput.accept(ModItems.CLOWNFISH_BUCKET.get());
+                        pOutput.accept(ModItems.DWARF_ANGELFISH_BUCKET.get());
                         pOutput.accept(ModItems.GOBY_BUCKET.get());
                         pOutput.accept(ModItems.TANG_BUCKET.get());
+                        pOutput.accept(ModItems.SEAHORSE_BUCKET.get());
                         pOutput.accept(ModItems.SHARK_BUCKET.get());
 
                         pOutput.accept(ModItems.BOXFISH_SPAWN_EGG.get());
                         pOutput.accept(ModItems.BUTTERFISH_SPAWN_EGG.get());
                         pOutput.accept(ModItems.CLOWNFISH_SPAWN_EGG.get());
+                        pOutput.accept(ModItems.DWARF_ANGEL_SPAWN_EGG.get());
                         pOutput.accept(ModItems.GOBY_SPAWN_EGG.get());
                         pOutput.accept(ModItems.TANG_SPAWN_EGG.get());
+                        pOutput.accept(ModItems.SEAHORSE_SPAWN_EGG.get());
                         pOutput.accept(ModItems.SMALL_SHARK_SPAWN_EGG.get());
+
+                        pOutput.accept(ModItems.BOXFISH_BREAD.get());
+                        pOutput.accept(ModItems.CLOWNFISH_CUPCAKE.get());
+                        pOutput.accept(ModItems.GOBY_GUMMY.get());
+                        pOutput.accept(ModItems.DRIED_SEAHORSE.get());
                     })
                     .build());
 

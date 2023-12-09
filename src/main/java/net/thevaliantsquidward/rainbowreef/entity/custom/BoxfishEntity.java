@@ -20,7 +20,7 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
-import net.minecraft.world.entity.animal.AbstractSchoolingFish;
+import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
 import net.minecraft.world.entity.player.Player;
@@ -38,27 +38,20 @@ import software.bernie.geckolib.core.object.PlayState;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class EntityTang extends AbstractSchoolingFish implements GeoEntity, Bucketable {
+public class BoxfishEntity extends AbstractFish implements GeoEntity, Bucketable {
 
 
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
-    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(EntityTang.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(EntityTang.class, EntityDataSerializers.INT);
-
-    public EntityTang(EntityType<? extends AbstractSchoolingFish> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
-    }
+    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(BoxfishEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(BoxfishEntity.class, EntityDataSerializers.INT);
 
     public static String getVariantName(int variant) {
         return switch (variant) {
-            case 1 -> "powderblue";
-            case 2 -> "yellow";
-            case 3 -> "unicorn";
-            case 4 -> "convict";
-            case 5 -> "clown";
-            case 6 -> "achilles";
-            default -> "bluehippo";
+            case 1 -> "purple";
+            case 2 -> "stripe";
+            case 3 -> "white";
+            default -> "gold";
         };
     }
 
@@ -72,7 +65,7 @@ public class EntityTang extends AbstractSchoolingFish implements GeoEntity, Buck
     @Override
     @Nonnull
     public ItemStack getBucketItemStack() {
-        ItemStack stack = new ItemStack(ModItems.TANG_BUCKET.get());
+        ItemStack stack = new ItemStack(ModItems.BOXFISH_BUCKET.get());
         if (this.hasCustomName()) {
             stack.setHoverName(this.getCustomName());
         }
@@ -142,17 +135,11 @@ public class EntityTang extends AbstractSchoolingFish implements GeoEntity, Buck
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         float variantChange = this.getRandom().nextFloat();
-        if(variantChange <= 0.14F){
-            this.setVariant(6);
-        }else if(variantChange <= 0.28F){
-            this.setVariant(5);
-        }else if(variantChange <= 0.42F){
-            this.setVariant(4);
-        }else if(variantChange <= 0.56F){
+        if(variantChange <= 0.25F){
             this.setVariant(3);
-        }else if(variantChange <= 0.70F){
+        }else if(variantChange <= 0.50F){
             this.setVariant(2);
-        }else if(variantChange <= 0.84F){
+        }else if(variantChange <= 0.75F){
             this.setVariant(1);
         }else{
             this.setVariant(0);
@@ -165,10 +152,15 @@ public class EntityTang extends AbstractSchoolingFish implements GeoEntity, Buck
         return MobType.WATER;
     }
 
+    public BoxfishEntity(EntityType<? extends AbstractFish> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
+    }
+
+
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 6D)
-                .add(Attributes.MOVEMENT_SPEED, 0.7D)
+                .add(Attributes.MAX_HEALTH, 7D)
+                .add(Attributes.MOVEMENT_SPEED, 0.2D)
                 .build();
     }
 
@@ -205,7 +197,7 @@ public class EntityTang extends AbstractSchoolingFish implements GeoEntity, Buck
     }
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
-        geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.tangfish.move", Animation.LoopType.LOOP));
+        geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.boxfish.move", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
 

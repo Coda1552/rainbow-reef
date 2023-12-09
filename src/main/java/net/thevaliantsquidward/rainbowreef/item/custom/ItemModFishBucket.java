@@ -33,7 +33,7 @@ public class ItemModFishBucket extends MobBucketItem {
             CompoundTag compoundnbt = stack.getTag();
             if (compoundnbt != null && compoundnbt.contains("BucketVariantTag", 3)) {
                 int i = compoundnbt.getInt("BucketVariantTag");
-                String s = "entity.rainbowreef.goby.variant_" + EntityGoby.getVariantName(i);
+                String s = "entity.rainbowreef.goby.variant_" + GobyEntity.getVariantName(i);
                 tooltip.add((Component.translatable(s)).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
             }
         }
@@ -41,7 +41,7 @@ public class ItemModFishBucket extends MobBucketItem {
             CompoundTag compoundnbt = stack.getTag();
             if (compoundnbt != null && compoundnbt.contains("BucketVariantTag", 3)) {
                 int i = compoundnbt.getInt("BucketVariantTag");
-                String s = "entity.rainbowreef.tang.variant_" + EntityTang.getVariantName(i);
+                String s = "entity.rainbowreef.tang.variant_" + TangEntity.getVariantName(i);
                 tooltip.add((Component.translatable(s)).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
             }
         }
@@ -49,7 +49,7 @@ public class ItemModFishBucket extends MobBucketItem {
             CompoundTag compoundnbt = stack.getTag();
             if (compoundnbt != null && compoundnbt.contains("BucketVariantTag", 3)) {
                 int i = compoundnbt.getInt("BucketVariantTag");
-                String s = "entity.rainbowreef.clownfish.variant_" + EntityClownfish.getVariantName(i);
+                String s = "entity.rainbowreef.clownfish.variant_" + ClownfishEntity.getVariantName(i);
                 tooltip.add((Component.translatable(s)).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
             }
         }
@@ -58,7 +58,7 @@ public class ItemModFishBucket extends MobBucketItem {
             CompoundTag compoundnbt = stack.getTag();
             if (compoundnbt != null && compoundnbt.contains("BucketVariantTag", 3)) {
                 int i = compoundnbt.getInt("BucketVariantTag");
-                String s = "entity.rainbowreef.boxfish.variant_" + EntityBoxfish.getVariantName(i);
+                String s = "entity.rainbowreef.boxfish.variant_" + BoxfishEntity.getVariantName(i);
                 tooltip.add((Component.translatable(s)).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
             }
         }
@@ -66,7 +66,25 @@ public class ItemModFishBucket extends MobBucketItem {
             CompoundTag compoundnbt = stack.getTag();
             if (compoundnbt != null && compoundnbt.contains("BucketVariantTag", 3)) {
                 int i = compoundnbt.getInt("BucketVariantTag");
-                String s = "entity.rainbowreef.small_shark.variant_" + EntitySmallShark.getVariantName(i);
+                String s = "entity.rainbowreef.small_shark.variant_" + SmallSharkEntity.getVariantName(i);
+                tooltip.add((Component.translatable(s)).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+            }
+        }
+
+        if (fishType == ModEntities.SEAHORSE.get()) {
+            CompoundTag compoundnbt = stack.getTag();
+            if (compoundnbt != null && compoundnbt.contains("BucketVariantTag", 3)) {
+                int i = compoundnbt.getInt("BucketVariantTag");
+                String s = "entity.rainbowreef.seahorse.variant_" + SeahorseEntity.getVariantName(i);
+                tooltip.add((Component.translatable(s)).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+            }
+        }
+
+        if (fishType == ModEntities.DWARFANGEL.get()) {
+            CompoundTag compoundnbt = stack.getTag();
+            if (compoundnbt != null && compoundnbt.contains("BucketVariantTag", 3)) {
+                int i = compoundnbt.getInt("BucketVariantTag");
+                String s = "entity.rainbowreef.dwarf_angelfish.variant_" + DwarfAngelfishEntity.getVariantName(i);
                 tooltip.add((Component.translatable(s)).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
             }
         }
@@ -75,7 +93,7 @@ public class ItemModFishBucket extends MobBucketItem {
             CompoundTag compoundnbt = stack.getTag();
             if (compoundnbt != null && compoundnbt.contains("BucketVariantTag", 3)) {
                 int i = compoundnbt.getInt("BucketVariantTag");
-                String s = "entity.rainbowreef.butterflyfish.variant_" + EntityButterfish.getVariantName(i);
+                String s = "entity.rainbowreef.butterflyfish.variant_" + ButterfishEntity.getVariantName(i);
                 tooltip.add((Component.translatable(s)).withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
             }
         }

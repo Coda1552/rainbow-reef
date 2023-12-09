@@ -4,10 +4,10 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.thevaliantsquidward.rainbowreef.RainbowReef;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityTang;
+import net.thevaliantsquidward.rainbowreef.entity.custom.TangEntity;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class TangRenderer extends GeoEntityRenderer<EntityTang> {
+public class TangRenderer extends GeoEntityRenderer<TangEntity> {
     private static final ResourceLocation TEXTURE_BLUE = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/bluetang.png");
     private static final ResourceLocation TEXTURE_POWDERBLUE = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/powderbluetang.png");
     private static final ResourceLocation TEXTURE_YELLOW = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/yellowtang.png");
@@ -20,11 +20,11 @@ public class TangRenderer extends GeoEntityRenderer<EntityTang> {
         super(renderManagerIn, new TangModel());
     }
 
-    protected void scale(EntityTang entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
+    protected void scale(TangEntity entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
     }
 
 
-    public ResourceLocation getTextureLocation(EntityTang entity) {
+    public ResourceLocation getTextureLocation(TangEntity entity) {
         return switch (entity.getVariant()) {
             case 1 -> TEXTURE_POWDERBLUE;
             case 2 -> TEXTURE_YELLOW;

@@ -2,23 +2,22 @@ package net.thevaliantsquidward.rainbowreef.entity.client;
 
 import net.minecraft.resources.ResourceLocation;
 import net.thevaliantsquidward.rainbowreef.RainbowReef;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityButterfish;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityClownfish;
+import net.thevaliantsquidward.rainbowreef.entity.custom.ButterfishEntity;
 import software.bernie.geckolib.model.GeoModel;
 
-public class ButterfishModel extends GeoModel<EntityButterfish> {
+public class ButterfishModel extends GeoModel<ButterfishEntity> {
     @Override
-    public ResourceLocation getModelResource(EntityButterfish animatable) {
+    public ResourceLocation getModelResource(ButterfishEntity animatable) {
         return new ResourceLocation(RainbowReef.MOD_ID, "geo/butterflyfish.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureResource(EntityButterfish animatable) {
+    public ResourceLocation getTextureResource(ButterfishEntity animatable) {
         return new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/copperband.png");
     }
 
     @Override
-    public ResourceLocation getAnimationResource(EntityButterfish animatable) {
+    public ResourceLocation getAnimationResource(ButterfishEntity animatable) {
         return new ResourceLocation(RainbowReef.MOD_ID, "animations/butterflyfish.animation.json");
     }
 

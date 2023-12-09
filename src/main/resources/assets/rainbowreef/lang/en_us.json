@@ -3,16 +3,25 @@
 
   "item.rainbowreef.goby_bucket" : "Bucket of Goby",
   "item.rainbowreef.tang_bucket" : "Bucket of Tang",
+  "item.rainbowreef.dwarf_angelfish_bucket" : "Bucket of Dwarf Angelfish",
   "item.rainbowreef.clownfish_bucket" : "Bucket of Clownfish",
   "item.rainbowreef.butterflyfish_bucket" : "Bucket of Butterflyfish",
   "item.rainbowreef.smallshark_bucket" : "Bucket of Small Shark",
   "item.rainbowreef.boxfish_bucket" : "Bucket of Boxfish",
+  "item.rainbowreef.seahorse_bucket" : "Bucket of Seahorse",
 
   "item.rainbowreef.raw_goby" : "Raw Goby",
   "item.rainbowreef.raw_tang" : "Raw Tang",
+  "item.rainbowreef.raw_dwarf_angelfish" : "Raw Dwarf Angelfish",
+  "item.rainbowreef.raw_seahorse" : "Raw Seahorse",
   "item.rainbowreef.raw_boxfish" : "Raw Boxfish",
   "item.rainbowreef.raw_clownfish" : "Raw Clownfish",
   "item.rainbowreef.raw_butterflyfish" : "Raw Butterflyfish",
+
+  "item.rainbowreef.goby_gummy" : "Goby Gummy",
+  "item.rainbowreef.boxfish_bread" : "Boxfish Bread",
+  "item.rainbowreef.clownfish_cupcake" : "Clownfish Cupcake",
+  "item.rainbowreef.dried_seahorse" : "Dried Seahorse",
 
   "item.rainbowreef.goby_spawn_egg" : "Goby Spawn Egg",
   "item.rainbowreef.tang_spawn_egg" : "Tang Spawn Egg",
@@ -20,6 +29,8 @@
   "item.rainbowreef.small_shark_spawn_egg" : "Small Shark Spawn Egg",
   "item.rainbowreef.clownfish_spawn_egg" : "Clownfish Spawn Egg",
   "item.rainbowreef.butterflyfish_spawn_egg" : "Butterflyfish Spawn Egg",
+  "item.rainbowreef.seahorse_spawn_egg" : "Seahorse Spawn Egg",
+  "item.rainbowreef.dwarf_angelfish_spawn_egg" : "Dwarf Angelfish Spawn Egg",
 
   "entity.rainbowreef.goby.variant_mandarin": "Mandarin",
   "entity.rainbowreef.goby.variant_purplefire": "Purple Fire",
@@ -45,6 +56,17 @@
   "entity.rainbowreef.clownfish.variant_clownfish_7": "Splattered",
   "entity.rainbowreef.clownfish.variant_clownfish_8": "Blizzard",
 
+  "entity.rainbowreef.seahorse.variant_kelpy": "Kelpy",
+  "entity.rainbowreef.seahorse.variant_cobalt": "Cobalt",
+  "entity.rainbowreef.seahorse.variant_gold": "Gold",
+  "entity.rainbowreef.seahorse.variant_amber": "Amber",
+  "entity.rainbowreef.seahorse.variant_silver": "Silver",
+  "entity.rainbowreef.seahorse.variant_garnet": "Garnet",
+  "entity.rainbowreef.seahorse.variant_ruby": "Ruby",
+  "entity.rainbowreef.seahorse.variant_spinel": "Spinel",
+  "entity.rainbowreef.seahorse.variant_chert": "Chert",
+  "entity.rainbowreef.seahorse.variant_onyx": "Onyx",
+
   "entity.rainbowreef.small_shark.variant_epaulette": "Epaulette",
   "entity.rainbowreef.small_shark.variant_zebra": "Zebra",
 
@@ -52,6 +74,12 @@
   "entity.rainbowreef.boxfish.variant_stripe": "White Barred",
   "entity.rainbowreef.boxfish.variant_white": "Horn Nosed",
   "entity.rainbowreef.boxfish.variant_gold": "Yellow",
+
+  "entity.rainbowreef.dwarf_angelfish.variant_bicolor": "Bicolor",
+  "entity.rainbowreef.dwarf_angelfish.variant_coralbeauty": "Coral Beauty",
+  "entity.rainbowreef.dwarf_angelfish.variant_candycane": "Candy Cane",
+  "entity.rainbowreef.dwarf_angelfish.variant_flame": "Flame",
+  "entity.rainbowreef.dwarf_angelfish.variant_spotted": "Spotted",
 
   "entity.rainbowreef.butterflyfish.variant_easterisland": "Easter Island",
   "entity.rainbowreef.butterflyfish.variant_threadfin": "Threadfin",
@@ -67,16 +95,24 @@
   "entity.rainbowreef.small_shark" : "Small Shark",
   "entity.rainbowreef.clownfish" : "Clownfish",
   "entity.rainbowreef.butterflyfish" : "Butterflyfish",
+  "entity.rainbowreef.seahorse" : "Seahorse",
+  "entity.rainbowreef.dwarf_angelfish" : "Dwarf Angelfish",
 
 
   "advancements.husbandry.collect_goby.title" : "Goby awesome? I sure hope you do!",
   "advancements.husbandry.collect_goby.description" : "Collect all Goby Variants",
+
+  "advancements.husbandry.collect_dwarf_angelfish.title" : "Biblically Accurate Angelfish",
+  "advancements.husbandry.collect_dwarf_angelfish.description" : "Collect all Dwarf Angelfish Variants",
 
   "advancements.husbandry.collect_butter.title" : "Butterfish? Where?",
   "advancements.husbandry.collect_butter.description" : "Collect all Butterflyfish Variants",
 
   "advancements.husbandry.collect_clownfish.title" : "You Found Nemo",
   "advancements.husbandry.collect_clownfish.description" : "Collect all Clownfish Variants",
+
+  "advancements.husbandry.collect_seahorse.title" : "I See Horse",
+  "advancements.husbandry.collect_seahorse.description" : "Collect all Seahorse Variants",
 
   "advancements.husbandry.collect_tang.title" : "A Whole Pallette of Fish",
   "advancements.husbandry.collect_tang.description" : "Collect all Tang Variants",

@@ -10,14 +10,17 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
-import net.minecraft.world.entity.animal.AbstractFish;
+import net.minecraft.world.entity.animal.AbstractSchoolingFish;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
 import net.minecraft.world.entity.player.Player;
@@ -30,24 +33,33 @@ import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.*;
-import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.object.PlayState;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class EntitySmallShark extends AbstractFish implements GeoEntity, Bucketable {
+public class ClownfishEntity extends AbstractSchoolingFish implements GeoEntity, Bucketable {
+
 
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
+    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(TangEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(TangEntity.class, EntityDataSerializers.INT);
 
-    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(EntitySmallShark.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(EntitySmallShark.class, EntityDataSerializers.INT);
+    public ClownfishEntity(EntityType<? extends AbstractSchoolingFish> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
+    }
 
     public static String getVariantName(int variant) {
         return switch (variant) {
-            case 1 -> "zebra";
-            default -> "epaulette";
+            case 1 -> "clownfish_1";
+            case 2 -> "clownfish_2";
+            case 3 -> "clownfish_4";
+            case 4 -> "clownfish_5";
+            case 5 -> "clownfish_6";
+            case 6 -> "clownfish_7";
+            case 7 -> "clownfish_8";
+            default -> "clownfish_3";
         };
     }
 
@@ -61,7 +73,7 @@ public class EntitySmallShark extends AbstractFish implements GeoEntity, Bucketa
     @Override
     @Nonnull
     public ItemStack getBucketItemStack() {
-        ItemStack stack = new ItemStack(ModItems.SHARK_BUCKET.get());
+        ItemStack stack = new ItemStack(ModItems.CLOWNFISH_BUCKET.get());
         if (this.hasCustomName()) {
             stack.setHoverName(this.getCustomName());
         }
@@ -131,7 +143,19 @@ public class EntitySmallShark extends AbstractFish implements GeoEntity, Bucketa
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         float variantChange = this.getRandom().nextFloat();
-        if(variantChange <= 0.50F){
+              if(variantChange <= 0.12F){
+            this.setVariant(7);
+        }else if(variantChange <= 0.24F){
+            this.setVariant(6);
+        }else if(variantChange <= 0.36F){
+            this.setVariant(5);
+        }else if(variantChange <= 0.48F){
+            this.setVariant(4);
+        }else if(variantChange <= 0.60F){
+            this.setVariant(3);
+        }else if(variantChange <= 0.72F){
+            this.setVariant(2);
+        }else if(variantChange <= 0.84F){
             this.setVariant(1);
         }else{
             this.setVariant(0);
@@ -144,15 +168,10 @@ public class EntitySmallShark extends AbstractFish implements GeoEntity, Bucketa
         return MobType.WATER;
     }
 
-    public EntitySmallShark(EntityType<? extends AbstractFish> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
-    }
-
-
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 7D)
-                .add(Attributes.MOVEMENT_SPEED, 0.4D)
+                .add(Attributes.MAX_HEALTH, 4D)
+                .add(Attributes.MOVEMENT_SPEED, 0.7D)
                 .build();
     }
 
@@ -189,7 +208,7 @@ public class EntitySmallShark extends AbstractFish implements GeoEntity, Bucketa
     }
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
-        geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.small_shark.move", Animation.LoopType.LOOP));
+        geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.clownfish.move", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
 
@@ -197,6 +216,5 @@ public class EntitySmallShark extends AbstractFish implements GeoEntity, Bucketa
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }
-
 
 }

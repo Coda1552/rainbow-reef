@@ -4,11 +4,10 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.thevaliantsquidward.rainbowreef.RainbowReef;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityButterfish;
-import net.thevaliantsquidward.rainbowreef.entity.custom.EntityClownfish;
+import net.thevaliantsquidward.rainbowreef.entity.custom.ButterfishEntity;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class ButterfishRenderer extends GeoEntityRenderer<EntityButterfish> {
+public class ButterfishRenderer extends GeoEntityRenderer<ButterfishEntity> {
     private static final ResourceLocation COPPERBAND = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/copperband.png");
     private static final ResourceLocation EASTERISLE = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/easterisle.png");
     private static final ResourceLocation THREADFIN = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/threadfin.png");
@@ -20,11 +19,11 @@ public class ButterfishRenderer extends GeoEntityRenderer<EntityButterfish> {
         super(renderManagerIn, new ButterfishModel());
     }
 
-    protected void scale(EntityButterfish entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
+    protected void scale(ButterfishEntity entitylivingbaseIn, PoseStack matrixStackIn, float partialTickTime) {
     }
 
 
-    public ResourceLocation getTextureLocation(EntityButterfish entity) {
+    public ResourceLocation getTextureLocation(ButterfishEntity entity) {
         return switch (entity.getVariant()) {
             case 1 -> EASTERISLE;
             case 2 -> THREADFIN;
