@@ -63,6 +63,18 @@ public class ModEntities {
                             .sized(0.5f, 0.5f)
                             .build(new ResourceLocation(RainbowReef.MOD_ID, "dwarf_angelfish").toString()));
 
+    public static final RegistryObject<EntityType<HogfishEntity>> HOGFISH =
+            ENTITY_TYPES.register("hogfish",
+                    () -> EntityType.Builder.of(HogfishEntity::new, MobCategory.WATER_AMBIENT)
+                            .sized(0.5f, 0.5f)
+                            .build(new ResourceLocation(RainbowReef.MOD_ID, "hogfish").toString()));
+
+    public static final RegistryObject<EntityType<ParrotfishEntity>> PARROTFISH =
+            ENTITY_TYPES.register("parrotfish",
+                    () -> EntityType.Builder.of(ParrotfishEntity::new, MobCategory.WATER_AMBIENT)
+                            .sized(0.6f, 0.6f)
+                            .build(new ResourceLocation(RainbowReef.MOD_ID, "parrotfish").toString()));
+
 
 
     public static void register(IEventBus eventBus) {

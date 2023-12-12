@@ -1,19 +1,18 @@
 package net.thevaliantsquidward.rainbowreef.entity.custom;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.SpawnGroupData;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
@@ -23,9 +22,11 @@ import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
 import net.minecraft.world.entity.animal.AbstractSchoolingFish;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
+import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.thevaliantsquidward.rainbowreef.item.ModItems;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -33,6 +34,7 @@ import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.object.PlayState;
 
 import javax.annotation.Nonnull;
@@ -58,6 +60,10 @@ public class TangEntity extends AbstractSchoolingFish implements GeoEntity, Buck
             case 4 -> "convict";
             case 5 -> "clown";
             case 6 -> "achilles";
+            case 7 -> "purple";
+            case 8 -> "messy";
+            case 9 -> "distorted";
+            case 10 -> "pearly";
             default -> "bluehippo";
         };
     }
@@ -142,15 +148,23 @@ public class TangEntity extends AbstractSchoolingFish implements GeoEntity, Buck
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
         float variantChange = this.getRandom().nextFloat();
-        if(variantChange <= 0.14F){
+        if(variantChange <= 0.00001){
+            this.setVariant(10);
+        } if(variantChange <= 0.0002){
+            this.setVariant(9);
+        }else if(variantChange <= 0.0003){
+            this.setVariant(8);
+        }else if(variantChange <= 0.12F){
+            this.setVariant(7);
+        }else if(variantChange <= 0.24F){
             this.setVariant(6);
-        }else if(variantChange <= 0.28F){
+        }else if(variantChange <= 0.36F){
             this.setVariant(5);
-        }else if(variantChange <= 0.42F){
+        }else if(variantChange <= 0.48F){
             this.setVariant(4);
-        }else if(variantChange <= 0.56F){
+        }else if(variantChange <= 0.60F){
             this.setVariant(3);
-        }else if(variantChange <= 0.70F){
+        }else if(variantChange <= 0.72F){
             this.setVariant(2);
         }else if(variantChange <= 0.84F){
             this.setVariant(1);
@@ -180,7 +194,9 @@ public class TangEntity extends AbstractSchoolingFish implements GeoEntity, Buck
         this.goalSelector.addGoal(2, new RandomSwimmingGoal(this, 0.8D, 1));
     }
 
-
+    public static <T extends Mob> boolean canSpawn(EntityType<TangEntity> p_223364_0_, LevelAccessor p_223364_1_, MobSpawnType reason, BlockPos p_223364_3_, RandomSource p_223364_4_) {
+        return WaterAnimal.checkSurfaceWaterAnimalSpawnRules(p_223364_0_, p_223364_1_, reason, p_223364_3_, p_223364_4_);
+    }
     protected SoundEvent getAmbientSound() {
         return SoundEvents.TROPICAL_FISH_AMBIENT;
     }

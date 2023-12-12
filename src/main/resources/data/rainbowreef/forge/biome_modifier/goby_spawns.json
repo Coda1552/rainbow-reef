@@ -1,11 +1,12 @@
 {
   "type" :"forge:add_spawns",
   "biomes" : [
-    "minecraft:warm_ocean"
+    "minecraft:warm_ocean",
+    "minecraft:mangrove_swamp"
   ],
   "spawners" : {
    "type" : "rainbowreef:goby",
-    "weight" : 50,
+    "weight" : 40,
     "minCount" : 1,
     "maxCount" : 7
   }

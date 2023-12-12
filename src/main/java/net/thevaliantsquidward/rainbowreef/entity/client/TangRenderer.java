@@ -16,6 +16,14 @@ public class TangRenderer extends GeoEntityRenderer<TangEntity> {
     private static final ResourceLocation TEXTURE_CLOWN = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/clowntang.png");
     private static final ResourceLocation TEXTURE_ACHILLES = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/achillestang.png");
 
+    private static final ResourceLocation TEXTURE_PURPLE = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/purpletang.png");
+
+    private static final ResourceLocation TEXTURE_MESSY = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/messy.png");
+
+    private static final ResourceLocation TEXTURE_DISTORTED = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/distorted.png");
+
+    private static final ResourceLocation TEXTURE_PEARLY = new ResourceLocation(RainbowReef.MOD_ID, "textures/entity/pearly.png");
+
     public TangRenderer(EntityRendererProvider.Context renderManagerIn) {
         super(renderManagerIn, new TangModel());
     }
@@ -32,6 +40,10 @@ public class TangRenderer extends GeoEntityRenderer<TangEntity> {
             case 4 -> TEXTURE_CONVICT;
             case 5 -> TEXTURE_CLOWN;
             case 6 -> TEXTURE_ACHILLES;
+            case 7 -> TEXTURE_PURPLE;
+            case 8 -> TEXTURE_MESSY;
+            case 9 -> TEXTURE_DISTORTED;
+            case 10 -> TEXTURE_PEARLY;
             default -> TEXTURE_BLUE;
         };
     }
