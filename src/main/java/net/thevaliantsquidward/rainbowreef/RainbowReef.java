@@ -2,8 +2,6 @@ package net.thevaliantsquidward.rainbowreef;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -15,7 +13,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.thevaliantsquidward.rainbowreef.entity.ModEntities;
-import net.thevaliantsquidward.rainbowreef.entity.client.*;
+import net.thevaliantsquidward.rainbowreef.entity.client.renders.*;
 import net.thevaliantsquidward.rainbowreef.item.ModCreativeModeTabs;
 import net.thevaliantsquidward.rainbowreef.item.ModItems;
 import org.slf4j.Logger;
