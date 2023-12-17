@@ -63,25 +63,25 @@ public class RainbowReef
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register
-                    (ModEntities.TANG.get(), TangRenderer:: new);
+                    (ModEntities.TANG.get(), TangRenderer::new);
             EntityRenderers.register
-                    (ModEntities.GOBY.get(), GobyRenderer:: new);
+                    (ModEntities.GOBY.get(), GobyRenderer::new);
             EntityRenderers.register
-                    (ModEntities.BOXFISH.get(), BoxfishRenderer:: new);
+                    (ModEntities.BOXFISH.get(), BoxfishRenderer::new);
             EntityRenderers.register
-                    (ModEntities.SMALL_SHARK.get(), SmallSharkRenderer:: new);
+                    (ModEntities.SMALL_SHARK.get(), SmallSharkRenderer::new);
             EntityRenderers.register
-                    (ModEntities.CLOWNFISH.get(), ClownfishRenderer:: new);
+                    (ModEntities.CLOWNFISH.get(), ClownfishRenderer::new);
             EntityRenderers.register
-                    (ModEntities.BUTTERFISH.get(), ButterfishRenderer:: new);
+                    (ModEntities.BUTTERFISH.get(), ButterfishRenderer::new);
             EntityRenderers.register
-                    (ModEntities.SEAHORSE.get(), SeahorseRenderer:: new);
+                    (ModEntities.SEAHORSE.get(), SeahorseRenderer::new);
             EntityRenderers.register
-                    (ModEntities.DWARFANGEL.get(), DwarfAngelfishRenderer:: new);
+                    (ModEntities.DWARFANGEL.get(), DwarfAngelfishRenderer::new);
             EntityRenderers.register
                     (ModEntities.PARROTFISH.get(), ParrotfishRenderer:: new);
             EntityRenderers.register
-                    (ModEntities.HOGFISH.get(), HogfishRenderer:: new);
+                    (ModEntities.HOGFISH.get(), HogfishRenderer::new);
         }
     }
 }
